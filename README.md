@@ -7,6 +7,7 @@ My plan is to combine each program together and control both of my multi effects
 Currently both program runs on Raspberry Pi Zero W. It is also working on Raspberry Pi Model B and I have built a pedal board with buttons, LEDs and potentiometers to control multieffect processors.
 
 Target:
+-------
 1. Remotely control my Line6 Pocket POD and Digitech RP250 multi effects pedals via WiFi or Bluetooth.
 2. To make available some functions of multi effects pedals via GUI or physical interface. For example Pocket POD has built in Wah Wah effect however there is no effect pedal connection to this device. You may find the interface details for each effect pedal below.
 3. To make available all function in a single GUI. Pocket POD is a beautiful small device, but it has limited buttons and potentiometers on it. Therefore you cannot edit all functions easily, you have to dig in menus. Instead of this, you may see and control all parameters on a GUI. 
@@ -14,6 +15,7 @@ Target:
 Below are the functions that are tested and working.
 
 Line6 Pocket POD Program Funtctions:
+------------------------------------
 
 About this device: Pedal uses MIDI Control commands to change presets etc. So if you know the control commands it is straighforward to control it with Pure Data.
 
@@ -29,6 +31,7 @@ What help I need to develop:
 I believe both of these functions can be done with MIDI SysEX (Sytem Exclusive) messages.
 
 Digitech RP250 Program Funtctions:
+----------------------------------
 
 About this device: 
 1. Pedal uses MIDI SysEX (Sytem Exclusive) to change presets etc. So if you know the control commands it is straighforward to control it with Pure Data.
