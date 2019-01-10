@@ -1,0 +1,1832 @@
+#N canvas 525 169 450 300 10;
+#N canvas 412 377 758 404 Volume 0;
+#X floatatom 66 114 5 0 0 0 - - -, f 5;
+#X obj 66 137 ctlout 7;
+#X obj 69 65 hsl 128 15 0 127 0 0 empty sld3 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 71 46 Volume Pedal;
+#X floatatom 225 114 5 0 0 0 - - -, f 5;
+#X obj 228 65 hsl 128 15 0 127 0 0 empty sld7 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 225 137 ctlout 46;
+#X text 221 46 Volume Pedal Minimum;
+#X obj 67 279 ctlout 47;
+#X floatatom 67 258 5 0 0 0 - - VolPrePost, f 5;
+#X obj 67 205 route 0 1;
+#X msg 67 229 0;
+#X msg 104 229 64;
+#X obj 67 182 tgl 15 0 empty btn9 empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X text 90 182 Volume Pre/Post;
+#X floatatom 393 114 5 0 0 0 - - -, f 5;
+#X obj 396 65 hsl 128 15 0 127 0 0 empty sld8 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 389 46 Volume Swell Enable;
+#X obj 393 138 ctlout 48;
+#X floatatom 546 114 5 0 0 0 - - -, f 5;
+#X obj 549 65 hsl 128 15 0 127 0 0 empty sld9 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 542 46 Volume Swell Ramp Time;
+#X obj 546 137 ctlout 49;
+#X text 129 8 Butun gelenler slider icindeki receive symbol kismina
+yazildi \, send receive kullanmadan direk aliyor;
+#X obj 66 89 int 80;
+#X obj 225 89 int;
+#X obj 393 89 int;
+#X obj 546 89 int;
+#X text 223 199 Nedense pd GUIden gelen sliderlar float geliyor int
+bu yüzden (80 default deger), f 20;
+#X connect 0 0 1 0;
+#X connect 2 0 24 0;
+#X connect 4 0 6 0;
+#X connect 5 0 25 0;
+#X connect 10 0 11 0;
+#X connect 10 1 12 0;
+#X connect 11 0 9 0;
+#X connect 12 0 9 0;
+#X connect 13 0 10 0;
+#X connect 15 0 18 0;
+#X connect 16 0 26 0;
+#X connect 19 0 22 0;
+#X connect 20 0 27 0;
+#X connect 24 0 0 0;
+#X connect 25 0 4 0;
+#X connect 26 0 15 0;
+#X connect 27 0 19 0;
+#X restore 30 46 pd Volume;
+#N canvas 381 181 700 453 Preset 0;
+#X floatatom 184 350 5 0 0 0 - - -, f 5;
+#X text 137 416 Patch Change (PGMOUT);
+#X msg 184 314 116;
+#X obj 330 246 hradio 15 1 0 10 FavIndex FavNum empty 0 -8 0 10 -4032
+-1 -1 0;
+#X floatatom 266 246 5 0 0 0 - patch -, f 5;
+#N canvas 465 354 589 234 CenkSelect 0;
+#X obj 93 37 inlet;
+#X obj 160 192 outlet;
+#X obj 93 73 route 0 1 2 3 4 5 6 7 8 9;
+#X floatatom 160 150 5 0 0 0 - - -, f 5;
+#X msg 21 104 116;
+#X msg 52 104 117;
+#X msg 83 104 118;
+#X msg 114 104 119;
+#X msg 145 104 10;
+#X msg 176 104 20;
+#X msg 207 103 30;
+#X msg 238 103 40;
+#X msg 300 103 60;
+#X text 15 7 Gelen sayıya göre gönderilecek sayı seçme;
+#X text 179 39 En son 11 output farklı bir sayı gelirse seçiliyor
+;
+#X msg 269 103 50;
+#X connect 0 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 2 2 6 0;
+#X connect 2 3 7 0;
+#X connect 2 4 8 0;
+#X connect 2 5 9 0;
+#X connect 2 6 10 0;
+#X connect 2 7 11 0;
+#X connect 2 8 15 0;
+#X connect 2 9 12 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 3 0;
+#X connect 11 0 3 0;
+#X connect 12 0 3 0;
+#X connect 15 0 3 0;
+#X restore 301 282 pd CenkSelect;
+#X obj 184 379 pgmout 2;
+#X obj 61 127 bng 15 250 50 0 empty btn1 empty 17 7 0 10 -262144 -1
+-1;
+#X obj 106 128 bng 15 250 50 0 empty btn2 empty 17 7 0 10 -262144 -1
+-1;
+#X msg 61 149 1;
+#X obj 61 182 +, f 4;
+#X msg 106 150 -1;
+#X text 59 106 UP. DOWN;
+#X text 378 222 Favori presetler;
+#X obj 232 129 bng 15 250 50 0 empty btn3 empty 17 7 0 10 -262144 -1
+-1;
+#X obj 277 128 bng 15 250 50 0 empty btn4 empty 17 7 0 10 -262144 -1
+-1;
+#X msg 232 150 1;
+#X obj 232 182 +, f 4;
+#X msg 277 150 -1;
+#X text 230 106 UP. DOWN;
+#X floatatom 330 216 5 0 0 0 - - -, f 5;
+#X text 147 65 Sadece belli grup preset icinden secme;
+#X text 23 84 Sırasıyla tüm presetleri secme;
+#X text 321 305 Sub Prog Secili presetler bunun icinde;
+#X obj 431 144 print;
+#X obj 431 116 pgmin;
+#X obj 61 212 clip 2 125;
+#X text 47 22 Sirayla Presetleri Seciyor (114 adet Pod sonraki 10 adet
+User) [2-125] arasi, f 63;
+#N canvas 2 105 1265 627 PresetNames 0;
+#X obj 37 55 route 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+21 22 23 24 25 26, f 74;
+#X obj 37 26 inlet;
+#X msg 140 151 BAD;
+#X msg 222 79 BLACK;
+#X msg 304 97 BLIZZARD;
+#X msg 325 79 BLOSSOM;
+#X msg 366 133 BOOM;
+#X msg 387 115 BOTTLE;
+#X msg 731 79 BUMPIN';
+#X msg 982 151 FOLLOW;
+#X msg 1096 151 HAIRSPRAY;
+#X msg 1117 133 HEADS;
+#X obj 37 289 route 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67
+68 69 70 71 72 73 74 75 76, f 74;
+#X obj 640 288 route 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92
+93 94 95 96 97 98 99 100 101, f 82;
+#X msg 284 363 LOLLIPOP;
+#X msg 346 399 MALIBU;
+#X msg 366 381 MEMPHIS;
+#X msg 428 327 MODERN CLASS A;
+#X msg 531 327 MUD JAM;
+#X msg 776 383 QUARTERS;
+#X msg 914 365 SLUG;
+#X msg 1028 365 SPRINGY;
+#X msg 1051 347 SQUASH;
+#X msg 1073 329 STADIUM;
+#X msg 1096 401 STREETS;
+#X msg 1165 347 TODAY;
+#X msg 1188 329 TRDPLATESMALLBOX;
+#X msg 43 646 TREADPLATE;
+#X msg 161 646 VERSE;
+#X msg 257 574 WESTWARD;
+#X msg 328 610 XP-32;
+#X obj 43 533 route 102 103 104 105 106 107 108 109 110 111 112 113
+114 115 116 117 118 119 120 121 122 123 124 125, f 82;
+#X obj 640 55 route 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42
+42 43 45 46 47 48 49 50 51, f 82;
+#X obj 724 617 print;
+#X msg 37 151 CLASSIC;
+#X msg 57 133 ACHTUNG_TONE;
+#X msg 78 115 ACID_GROOVE;
+#X msg 98 97 ARENA_FUZZ;
+#X msg 119 79 AUSTIN_LIMITS;
+#X msg 160 133 BARE_BONES;
+#X msg 181 115 BIG_BANG;
+#X msg 201 97 BIG_TREADPLATE;
+#X msg 243 151 BLACK_PANEL;
+#X msg 263 133 BLACK_PANEL_#2;
+#X msg 284 115 BLACK_PANEL+TREM;
+#X msg 346 151 BLUE_SLIDE;
+#X msg 407 97 BOUTIQUE_#1;
+#X msg 428 79 BOUTIQUE_#2;
+#X msg 449 151 BOUTIQUE_#3;
+#X msg 469 133 BOYS_DON'T_CRY;
+#X msg 490 115 BRIT_BLUES;
+#X msg 510 97 BRIT_CLASS_A;
+#X msg 531 79 BRIT_CLASS_A_#2;
+#X msg 640 151 BRIT_CLASS_A_#3;
+#X msg 662 133 BRIT_CLASSIC;
+#X msg 685 115 BRIT_HI_GAIN;
+#X msg 708 97 BROWN_SOUND;
+#X msg 754 151 CAJUN_BLUES;
+#X msg 776 133 CAL-CRUNCH_#1;
+#X msg 799 115 CAL-CRUNCH_#2;
+#X msg 822 97 CALIFORNIA_SPIN;
+#X msg 845 79 CHINA_TONE;
+#X msg 868 151 CLASS_A;
+#X msg 892 133 CLASSIC_68;
+#X msg 914 115 CLUB_TONE;
+#X msg 936 97 ENCHANTED_ATTIC;
+#X msg 957 79 FLOWER_POWER;
+#X msg 1005 133 FUZZ_BOX;
+#X msg 1028 115 FUZZ_BOX_ECHO;
+#X msg 1051 97 FUZZY_WUZZY;
+#X msg 1073 79 GREEN_JEANS;
+#X msg 1142 115 HI_GAIN_GARDEN;
+#X msg 1165 97 INSANE_SCOOP;
+#X msg 1188 79 INSANE_BEACH_PARTY;
+#X msg 37 399 INTRSTELLR_GLIDE;
+#X msg 57 381 JAZZ_CLEAN;
+#X msg 78 363 LEAD_THE_WAY;
+#X msg 98 345 LIKE_HEAVEN;
+#X msg 119 327 LINE_6_BLUES;
+#X msg 140 399 LINE_6_CLEAN;
+#X msg 160 381 LINE_6_CRUNCH;
+#X msg 181 363 LINE_6_CRUNCH_#2;
+#X msg 201 345 LINE_6_DRIVE;
+#X msg 222 327 LINE_6_INSANE;
+#X msg 243 399 LINE_6_LAYER;
+#X msg 263 381 LINE_6_TWANG;
+#X msg 304 345 LUSHY_SWIRL;
+#X msg 325 327 LUX_VERB_CHORUS;
+#X msg 387 363 MIXED_UP;
+#X msg 407 345 MODEL-T_FORD;
+#X msg 449 399 MODERN_HI_GAIN;
+#X msg 469 381 MODERN_HI-GAIN_#2;
+#X msg 490 363 MODERNSPACE_THMP;
+#X msg 510 345 MOODY_TWEED;
+#X msg 640 401 NEW_WAVE;
+#X msg 662 383 OUT_OF_MY_HEAD;
+#X msg 685 365 OVER_BITE;
+#X msg 708 347 PICKET_FENCE;
+#X msg 731 329 PLEXI_45;
+#X msg 754 401 2PLUSH_GARDEN;
+#X msg 799 365 REDIO_DIAL;
+#X msg 822 347 RAT_CAGE;
+#X msg 845 329 ROTARY_PHONE;
+#X msg 868 401 RUSTY_SPRING;
+#X msg 891 383 SALTY_DOG;
+#X msg 936 347 SMALL_CHUNKS;
+#X msg 959 329 SMALL_TWEED;
+#X msg 982 401 SMALL_TWEED_#2;
+#X msg 1005 383 SNOW_DOME;
+#X msg 1119 383 SUNSHINE_BOX;
+#X msg 1142 365 THICK_N'_JUICY;
+#X msg 66 628 TREADPLATE_#2;
+#X msg 90 610 TREADPLATE_SCOOP;
+#X msg 114 592 TUBE_PREAMP;
+#X msg 138 574 TWEED_BLUES;
+#X msg 185 628 VINTAGE_CLASS_A;
+#X msg 209 610 WARMIN'_UP;
+#X msg 233 592 WEAVIN'_TWEED;
+#X msg 280 646 WIZARD_POP;
+#X msg 304 628 WOBBLE_WOBBLE;
+#X msg 352 592 Z_SURF;
+#X msg 376 574 User1_Cenk_TUBE_AMP;
+#X msg 399 646 User2_Cenk_CHINA;
+#X msg 423 628 User3_Cenk_EUROPA;
+#X msg 447 610 User4_Cenk_SRV;
+#X msg 472 592 User5_CeSURF;
+#X msg 495 574 User6_Ce_LL_CHUNKS;
+#X msg 518 646 User7_CEDIO _DIAL;
+#X msg 542 628 User8_CeFat;
+#X msg 566 610 User9_CeDirect;
+#X msg 590 592 User10;
+#X text 712 640 Ekrana yaz ve GUIye gonder;
+#X obj 576 264 send PresetN;
+#X obj 580 495 send PresetN;
+#X obj 724 565 receive PresetN;
+#X obj 359 721 send PresetN;
+#X obj 776 617 send PresetName;
+#X obj 776 592 symbol;
+#X connect 0 0 34 0;
+#X connect 0 1 35 0;
+#X connect 0 2 36 0;
+#X connect 0 3 37 0;
+#X connect 0 4 38 0;
+#X connect 0 5 2 0;
+#X connect 0 6 39 0;
+#X connect 0 7 40 0;
+#X connect 0 8 41 0;
+#X connect 0 9 3 0;
+#X connect 0 10 42 0;
+#X connect 0 11 43 0;
+#X connect 0 12 44 0;
+#X connect 0 13 4 0;
+#X connect 0 14 5 0;
+#X connect 0 15 45 0;
+#X connect 0 16 6 0;
+#X connect 0 17 7 0;
+#X connect 0 18 46 0;
+#X connect 0 19 47 0;
+#X connect 0 20 48 0;
+#X connect 0 21 49 0;
+#X connect 0 22 50 0;
+#X connect 0 23 51 0;
+#X connect 0 24 52 0;
+#X connect 0 25 32 0;
+#X connect 1 0 0 0;
+#X connect 2 0 132 0;
+#X connect 3 0 132 0;
+#X connect 4 0 132 0;
+#X connect 5 0 132 0;
+#X connect 6 0 132 0;
+#X connect 7 0 132 0;
+#X connect 8 0 132 0;
+#X connect 9 0 132 0;
+#X connect 10 0 132 0;
+#X connect 11 0 132 0;
+#X connect 12 0 74 0;
+#X connect 12 1 75 0;
+#X connect 12 2 76 0;
+#X connect 12 3 77 0;
+#X connect 12 4 78 0;
+#X connect 12 5 79 0;
+#X connect 12 6 80 0;
+#X connect 12 7 81 0;
+#X connect 12 8 82 0;
+#X connect 12 9 83 0;
+#X connect 12 10 84 0;
+#X connect 12 11 85 0;
+#X connect 12 12 14 0;
+#X connect 12 13 86 0;
+#X connect 12 14 87 0;
+#X connect 12 15 15 0;
+#X connect 12 16 16 0;
+#X connect 12 17 88 0;
+#X connect 12 18 89 0;
+#X connect 12 19 17 0;
+#X connect 12 20 90 0;
+#X connect 12 21 91 0;
+#X connect 12 22 92 0;
+#X connect 12 23 93 0;
+#X connect 12 24 18 0;
+#X connect 12 25 13 0;
+#X connect 13 0 94 0;
+#X connect 13 1 95 0;
+#X connect 13 2 96 0;
+#X connect 13 3 97 0;
+#X connect 13 4 98 0;
+#X connect 13 5 99 0;
+#X connect 13 6 19 0;
+#X connect 13 7 100 0;
+#X connect 13 8 101 0;
+#X connect 13 9 102 0;
+#X connect 13 10 103 0;
+#X connect 13 11 104 0;
+#X connect 13 12 20 0;
+#X connect 13 13 105 0;
+#X connect 13 14 106 0;
+#X connect 13 15 107 0;
+#X connect 13 16 108 0;
+#X connect 13 17 21 0;
+#X connect 13 18 22 0;
+#X connect 13 19 23 0;
+#X connect 13 20 24 0;
+#X connect 13 21 109 0;
+#X connect 13 22 110 0;
+#X connect 13 23 25 0;
+#X connect 13 24 26 0;
+#X connect 13 25 31 0;
+#X connect 14 0 133 0;
+#X connect 15 0 133 0;
+#X connect 16 0 133 0;
+#X connect 17 0 133 0;
+#X connect 18 0 133 0;
+#X connect 19 0 133 0;
+#X connect 20 0 133 0;
+#X connect 21 0 133 0;
+#X connect 22 0 133 0;
+#X connect 23 0 133 0;
+#X connect 24 0 133 0;
+#X connect 25 0 133 0;
+#X connect 26 0 133 0;
+#X connect 27 0 135 0;
+#X connect 28 0 135 0;
+#X connect 29 0 135 0;
+#X connect 30 0 135 0;
+#X connect 31 0 27 0;
+#X connect 31 1 111 0;
+#X connect 31 2 112 0;
+#X connect 31 3 113 0;
+#X connect 31 4 114 0;
+#X connect 31 5 28 0;
+#X connect 31 6 115 0;
+#X connect 31 7 116 0;
+#X connect 31 8 117 0;
+#X connect 31 9 29 0;
+#X connect 31 10 118 0;
+#X connect 31 11 119 0;
+#X connect 31 12 30 0;
+#X connect 31 13 120 0;
+#X connect 31 14 121 0;
+#X connect 31 15 122 0;
+#X connect 31 16 123 0;
+#X connect 31 17 124 0;
+#X connect 31 18 125 0;
+#X connect 31 19 126 0;
+#X connect 31 20 127 0;
+#X connect 31 21 128 0;
+#X connect 31 22 129 0;
+#X connect 31 23 130 0;
+#X connect 32 0 53 0;
+#X connect 32 1 54 0;
+#X connect 32 2 55 0;
+#X connect 32 3 56 0;
+#X connect 32 4 8 0;
+#X connect 32 5 57 0;
+#X connect 32 6 58 0;
+#X connect 32 7 59 0;
+#X connect 32 8 60 0;
+#X connect 32 9 61 0;
+#X connect 32 10 62 0;
+#X connect 32 11 63 0;
+#X connect 32 12 64 0;
+#X connect 32 13 65 0;
+#X connect 32 14 66 0;
+#X connect 32 15 9 0;
+#X connect 32 16 67 0;
+#X connect 32 17 68 0;
+#X connect 32 18 69 0;
+#X connect 32 19 70 0;
+#X connect 32 20 10 0;
+#X connect 32 21 11 0;
+#X connect 32 22 71 0;
+#X connect 32 23 72 0;
+#X connect 32 24 73 0;
+#X connect 32 25 12 0;
+#X connect 34 0 132 0;
+#X connect 35 0 132 0;
+#X connect 36 0 132 0;
+#X connect 37 0 132 0;
+#X connect 38 0 132 0;
+#X connect 39 0 132 0;
+#X connect 40 0 132 0;
+#X connect 41 0 132 0;
+#X connect 42 0 132 0;
+#X connect 43 0 132 0;
+#X connect 44 0 132 0;
+#X connect 45 0 132 0;
+#X connect 46 0 132 0;
+#X connect 47 0 132 0;
+#X connect 48 0 132 0;
+#X connect 49 0 132 0;
+#X connect 50 0 132 0;
+#X connect 51 0 132 0;
+#X connect 52 0 132 0;
+#X connect 53 0 132 0;
+#X connect 54 0 132 0;
+#X connect 55 0 132 0;
+#X connect 56 0 132 0;
+#X connect 57 0 132 0;
+#X connect 58 0 132 0;
+#X connect 59 0 132 0;
+#X connect 60 0 132 0;
+#X connect 61 0 132 0;
+#X connect 62 0 132 0;
+#X connect 63 0 132 0;
+#X connect 64 0 132 0;
+#X connect 65 0 132 0;
+#X connect 66 0 132 0;
+#X connect 67 0 132 0;
+#X connect 68 0 132 0;
+#X connect 69 0 132 0;
+#X connect 70 0 132 0;
+#X connect 71 0 132 0;
+#X connect 72 0 132 0;
+#X connect 73 0 132 0;
+#X connect 74 0 133 0;
+#X connect 75 0 133 0;
+#X connect 76 0 133 0;
+#X connect 77 0 133 0;
+#X connect 78 0 133 0;
+#X connect 79 0 133 0;
+#X connect 80 0 133 0;
+#X connect 81 0 133 0;
+#X connect 82 0 133 0;
+#X connect 83 0 133 0;
+#X connect 84 0 133 0;
+#X connect 85 0 133 0;
+#X connect 86 0 133 0;
+#X connect 87 0 133 0;
+#X connect 88 0 133 0;
+#X connect 89 0 133 0;
+#X connect 90 0 133 0;
+#X connect 91 0 133 0;
+#X connect 92 0 133 0;
+#X connect 93 0 133 0;
+#X connect 94 0 133 0;
+#X connect 95 0 133 0;
+#X connect 96 0 133 0;
+#X connect 97 0 133 0;
+#X connect 98 0 133 0;
+#X connect 99 0 133 0;
+#X connect 100 0 133 0;
+#X connect 101 0 133 0;
+#X connect 102 0 133 0;
+#X connect 103 0 133 0;
+#X connect 104 0 133 0;
+#X connect 105 0 133 0;
+#X connect 106 0 133 0;
+#X connect 107 0 133 0;
+#X connect 108 0 133 0;
+#X connect 109 0 133 0;
+#X connect 110 0 133 0;
+#X connect 111 0 135 0;
+#X connect 112 0 135 0;
+#X connect 113 0 135 0;
+#X connect 114 0 135 0;
+#X connect 115 0 135 0;
+#X connect 116 0 135 0;
+#X connect 117 0 135 0;
+#X connect 118 0 135 0;
+#X connect 119 0 135 0;
+#X connect 120 0 135 0;
+#X connect 121 0 135 0;
+#X connect 122 0 135 0;
+#X connect 123 0 135 0;
+#X connect 124 0 135 0;
+#X connect 125 0 135 0;
+#X connect 126 0 135 0;
+#X connect 127 0 135 0;
+#X connect 128 0 135 0;
+#X connect 129 0 135 0;
+#X connect 130 0 135 0;
+#X connect 134 0 33 0;
+#X connect 134 0 137 0;
+#X connect 137 0 136 0;
+#X restore 336 379 pd PresetNames;
+#X obj 291 182 mod 10;
+#X text 349 181 Mod 10 \, (0-9) arasi dongusel seciyor;
+#X floatatom 116 367 5 0 0 0 - - PrstNum, f 5;
+#X text 308 84 Cihaz uzerinde preset degistirilirse # okuyor pgmin
+chn# belirtmezsen hepsini dinliyor;
+#X connect 0 0 6 0;
+#X connect 0 0 10 1;
+#X connect 0 0 31 0;
+#X connect 0 0 28 0;
+#X connect 2 0 0 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 7 0 9 0;
+#X connect 8 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 26 0;
+#X connect 11 0 10 0;
+#X connect 14 0 16 0;
+#X connect 15 0 18 0;
+#X connect 16 0 17 0;
+#X connect 17 0 29 0;
+#X connect 18 0 17 0;
+#X connect 20 0 3 0;
+#X connect 25 0 24 0;
+#X connect 25 0 0 0;
+#X connect 26 0 0 0;
+#X connect 29 0 17 1;
+#X connect 29 0 20 0;
+#X restore 146 14 pd Preset;
+#N canvas 319 271 727 377 TCPconnect 0;
+#X floatatom 183 160 5 0 0 0 - - NumClients, f 5;
+#X obj 98 180 print received;
+#X floatatom 23 238 5 0 0 0 - - sld1, f 5;
+#X floatatom 54 259 5 0 0 0 - - sld2, f 5;
+#X floatatom 86 239 5 0 0 0 - - sld3, f 5;
+#X floatatom 246 259 5 0 0 0 - - x, f 5;
+#X floatatom 278 239 5 0 0 0 - - y, f 5;
+#X floatatom 310 259 5 0 0 0 - - z, f 5;
+#X text 360 196 Sondaki Route edilemyen sayi buraya geliyor, f 23
+;
+#X obj 231 159 tgl 15 0 Connected empty empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X floatatom 82 39 5 0 0 0 - - -, f 5;
+#X text 169 63 pack help oku \, 100 default deger;
+#X obj 81 132 netreceive 1301;
+#X obj 23 210 route sld1 sld2 sld3 btn1 btn2 btn3 btn4 x y z;
+#X obj 118 260 route 1;
+#X obj 118 287 bng 15 250 50 0 btn1 empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 150 238 route 1;
+#X obj 150 287 bng 15 250 50 0 btn2 empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 182 260 route 1;
+#X obj 182 287 bng 15 250 50 0 btn3 empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 214 238 route 1;
+#X obj 214 287 bng 15 250 50 0 btn4 empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 81 91 send \$2 \$1;
+#X obj 81 63 pack 100 s;
+#X msg 148 38 symbol Volume;
+#X obj 148 16 loadbang;
+#X text 220 16 ilk acilista bir kez bang;
+#X text 101 305 Butonlardan hem basarken hem cekerken bang geliyordu
+route o yuzden kondu, f 41;
+#X text 257 160 Connected bilgisi ve client sayisi;
+#N canvas 109 157 995 535 OtherButtons 0;
+#X obj 33 54 inlet;
+#X floatatom 33 138 5 0 0 0 - - sld4, f 5;
+#X floatatom 73 159 5 0 0 0 - - sld5, f 5;
+#X floatatom 114 139 5 0 0 0 - - sld6, f 5;
+#X obj 480 160 route 1;
+#X obj 480 187 bng 15 250 50 0 btn9 empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 521 138 route 1;
+#X obj 521 187 bng 15 250 50 0 btn10 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 561 160 route 1;
+#X obj 561 187 bng 15 250 50 0 btn11 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 602 138 route 1;
+#X obj 602 187 bng 15 250 50 0 btn12 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 33 110 route sld4 sld5 sld6 sld7 sld8 sld9 sld10 btn5 btn6 btn7
+btn8 btn9 btn10 btn11 btn12 btn13 btn14 btn15, f 105;
+#X floatatom 155 159 5 0 0 0 - - sld7, f 5;
+#X floatatom 195 139 5 0 0 0 - - sld8, f 5;
+#X floatatom 236 159 5 0 0 0 - - sld9, f 5;
+#X floatatom 277 139 5 0 0 0 - - sld10, f 5;
+#X obj 317 160 route 1;
+#X obj 317 187 bng 15 250 50 0 btn5 empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 358 138 route 1;
+#X obj 358 187 bng 15 250 50 0 btn6 empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 399 160 route 1;
+#X obj 399 187 bng 15 250 50 0 btn7 empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 439 138 route 1;
+#X obj 439 187 bng 15 250 50 0 btn8 empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 642 160 route 1;
+#X obj 642 187 bng 15 250 50 0 btn13 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 683 138 route 1;
+#X obj 683 187 bng 15 250 50 0 btn14 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 723 160 route 1;
+#X obj 723 187 bng 15 250 50 0 btn15 empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 33 258 5 0 0 0 - - sld11, f 5;
+#X floatatom 77 279 5 0 0 0 - - sld12, f 5;
+#X floatatom 121 259 5 0 0 0 - - sld13, f 5;
+#X obj 607 280 route 1;
+#X obj 607 307 bng 15 250 50 0 btn16 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 651 258 route 1;
+#X obj 651 307 bng 15 250 50 0 btn17 empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 165 279 5 0 0 0 - - sld14, f 5;
+#X floatatom 209 259 5 0 0 0 - - sld15, f 5;
+#X floatatom 253 279 5 0 0 0 - - sld16, f 5;
+#X floatatom 298 259 5 0 0 0 - - sld17, f 5;
+#X obj 695 280 route 1;
+#X obj 695 307 bng 15 250 50 0 btn18 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 739 258 route 1;
+#X obj 739 307 bng 15 250 50 0 btn19 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 783 280 route 1;
+#X obj 783 307 bng 15 250 50 0 btn20 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 33 230 route sld11 sld12 sld13 sld14 sld15 sld16 sld17 sld18
+sld19 sld20 sld21 sld22 sld23 btn16 btn17 btn18 btn19 btn20, f 114
+;
+#X floatatom 342 279 5 0 0 0 - - sld18, f 5;
+#X floatatom 386 259 5 0 0 0 - - sld19, f 5;
+#X floatatom 430 279 5 0 0 0 - - sld20, f 5;
+#X floatatom 474 259 5 0 0 0 - - sld21, f 5;
+#X floatatom 518 279 5 0 0 0 - - sld22, f 5;
+#X floatatom 563 259 5 0 0 0 - - sld23, f 5;
+#X text 202 50 Butun slider ve buton isimleri number ve bang icine
+send symbol kismina yazildi \, ayrica send receive ile gondermeye gerek
+yok;
+#X floatatom 33 368 5 0 0 0 - - sld24, f 5;
+#X floatatom 79 389 5 0 0 0 - - sld25, f 5;
+#X floatatom 125 369 5 0 0 0 - - sld26, f 5;
+#X floatatom 171 389 5 0 0 0 - - sld27, f 5;
+#X floatatom 217 369 5 0 0 0 - - sld28, f 5;
+#X floatatom 263 389 5 0 0 0 - - sld29, f 5;
+#X floatatom 310 369 5 0 0 0 - - sld30, f 5;
+#X floatatom 356 389 5 0 0 0 - - sld31, f 5;
+#X floatatom 402 369 5 0 0 0 - - sld32, f 5;
+#X floatatom 448 389 5 0 0 0 - - sld33, f 5;
+#X floatatom 494 369 5 0 0 0 - - sld34, f 5;
+#X floatatom 541 389 5 0 0 0 - - sld35, f 5;
+#X floatatom 587 369 5 0 0 0 - - sld36, f 5;
+#X obj 633 388 route 1;
+#X obj 633 415 bng 15 250 50 0 btn21 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 679 366 route 1;
+#X obj 679 415 bng 15 250 50 0 btn22 empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 33 340 route sld24 sld25 sld26 sld27 sld28 sld29 sld30 sld31
+sld32 sld33 sld34 sld35 sld36 btn21 btn22 btn23, f 106;
+#X obj 725 388 route 1;
+#X obj 725 415 bng 15 250 50 0 btn23 empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 0 0 12 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 12 0 1 0;
+#X connect 12 1 2 0;
+#X connect 12 2 3 0;
+#X connect 12 3 13 0;
+#X connect 12 4 14 0;
+#X connect 12 5 15 0;
+#X connect 12 6 16 0;
+#X connect 12 7 17 0;
+#X connect 12 8 19 0;
+#X connect 12 9 21 0;
+#X connect 12 10 23 0;
+#X connect 12 11 4 0;
+#X connect 12 12 6 0;
+#X connect 12 13 8 0;
+#X connect 12 14 10 0;
+#X connect 12 15 25 0;
+#X connect 12 16 27 0;
+#X connect 12 17 29 0;
+#X connect 12 18 48 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 21 0 22 0;
+#X connect 23 0 24 0;
+#X connect 25 0 26 0;
+#X connect 27 0 28 0;
+#X connect 29 0 30 0;
+#X connect 34 0 35 0;
+#X connect 36 0 37 0;
+#X connect 42 0 43 0;
+#X connect 44 0 45 0;
+#X connect 46 0 47 0;
+#X connect 48 0 31 0;
+#X connect 48 1 32 0;
+#X connect 48 2 33 0;
+#X connect 48 3 38 0;
+#X connect 48 4 39 0;
+#X connect 48 5 40 0;
+#X connect 48 6 41 0;
+#X connect 48 7 49 0;
+#X connect 48 8 50 0;
+#X connect 48 9 51 0;
+#X connect 48 10 52 0;
+#X connect 48 11 53 0;
+#X connect 48 12 54 0;
+#X connect 48 13 34 0;
+#X connect 48 14 36 0;
+#X connect 48 15 42 0;
+#X connect 48 16 44 0;
+#X connect 48 17 46 0;
+#X connect 48 18 73 0;
+#X connect 69 0 70 0;
+#X connect 71 0 72 0;
+#X connect 73 0 56 0;
+#X connect 73 1 57 0;
+#X connect 73 2 58 0;
+#X connect 73 3 59 0;
+#X connect 73 4 60 0;
+#X connect 73 5 61 0;
+#X connect 73 6 62 0;
+#X connect 73 7 63 0;
+#X connect 73 8 64 0;
+#X connect 73 9 65 0;
+#X connect 73 10 66 0;
+#X connect 73 11 67 0;
+#X connect 73 12 68 0;
+#X connect 73 13 69 0;
+#X connect 73 14 71 0;
+#X connect 73 15 74 0;
+#X connect 74 0 75 0;
+#X restore 400 254 pd OtherButtons;
+#X obj 185 97 receive NetYolla;
+#X text 304 98 pd NetGonderilecekler'den bilgi aliyor;
+#X connect 10 0 23 0;
+#X connect 12 0 1 0;
+#X connect 12 0 13 0;
+#X connect 12 1 0 0;
+#X connect 12 1 9 0;
+#X connect 13 0 2 0;
+#X connect 13 1 3 0;
+#X connect 13 2 4 0;
+#X connect 13 2 10 0;
+#X connect 13 3 14 0;
+#X connect 13 4 16 0;
+#X connect 13 5 18 0;
+#X connect 13 6 20 0;
+#X connect 13 7 5 0;
+#X connect 13 8 6 0;
+#X connect 13 9 7 0;
+#X connect 13 10 29 0;
+#X connect 14 0 15 0;
+#X connect 16 0 17 0;
+#X connect 18 0 19 0;
+#X connect 20 0 21 0;
+#X connect 22 0 12 0;
+#X connect 23 0 22 0;
+#X connect 24 0 23 1;
+#X connect 25 0 24 0;
+#X connect 30 0 12 0;
+#X restore 30 13 pd TCPconnect;
+#N canvas 550 184 551 300 NoiseGate 0;
+#X floatatom 237 131 5 0 0 0 - - -, f 5;
+#X obj 240 81 hsl 128 15 0 127 0 0 empty sld10 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 396 131 5 0 0 0 - - -, f 5;
+#X obj 399 81 hsl 128 15 0 127 0 0 empty sld11 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 47 134 5 0 0 0 - - -, f 5;
+#X obj 47 81 route 0 1;
+#X msg 47 105 0;
+#X msg 84 105 64;
+#X obj 47 58 tgl 15 0 empty btn10 empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 47 155 ctlout 22;
+#X text 70 58 Noise Gate Enable;
+#X text 219 62 Gate Treshold [32-127];
+#X text 392 62 Gate Decay Time;
+#X obj 237 153 ctlout 23;
+#X obj 396 153 ctlout 24;
+#X obj 237 106 int;
+#X obj 396 106 int;
+#X connect 0 0 13 0;
+#X connect 1 0 15 0;
+#X connect 2 0 14 0;
+#X connect 3 0 16 0;
+#X connect 4 0 9 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X connect 15 0 0 0;
+#X connect 16 0 2 0;
+#X restore 29 80 pd NoiseGate;
+#N canvas 182 249 980 388 AmpCabEffects 0;
+#X floatatom 35 126 5 0 0 0 - - -, f 5;
+#X obj 38 78 hsl 128 15 0 127 0 0 empty sld1 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 188 126 5 0 0 0 - - -, f 5;
+#X obj 191 78 hsl 128 15 0 127 0 0 empty sld2 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 40 59 Amp chan volume;
+#X obj 35 150 ctlout 17;
+#X obj 188 150 ctlout 13;
+#X text 193 59 Amp drive;
+#X floatatom 35 286 5 0 0 0 - - -, f 5;
+#X obj 38 238 hsl 128 15 0 127 0 0 empty sld4 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 188 286 5 0 0 0 - - -, f 5;
+#X obj 191 238 hsl 128 15 0 127 0 0 empty sld5 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 338 286 5 0 0 0 - - -, f 5;
+#X obj 341 238 hsl 128 15 0 127 0 0 empty sld6 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 40 219 Bass;
+#X text 193 219 Mid;
+#X text 343 219 Treble;
+#X obj 35 310 ctlout 14;
+#X obj 188 310 ctlout 15;
+#X obj 338 310 ctlout 16;
+#X obj 550 107 bng 15 250 50 0 empty btn5 empty 17 7 0 10 -262144 -1
+-1;
+#X obj 595 108 bng 15 250 50 0 empty btn6 empty 17 7 0 10 -262144 -1
+-1;
+#X msg 550 129 1;
+#X obj 550 162 +, f 4;
+#X msg 595 130 -1;
+#X text 548 86 UP. DOWN;
+#X obj 550 260 ctlout 12;
+#X text 514 64 Amp Model Select;
+#X floatatom 575 225 5 0 0 0 - - -, f 5;
+#X obj 550 189 mod 32;
+#X text 537 292 mod 32 \, clipden farkli olarak 0-31 arasi dongu olarak
+seciyor;
+#X obj 680 107 bng 15 250 50 0 empty btn7 empty 17 7 0 10 -262144 -1
+-1;
+#X obj 725 108 bng 15 250 50 0 empty btn8 empty 17 7 0 10 -262144 -1
+-1;
+#X msg 680 129 1;
+#X obj 680 162 +, f 4;
+#X msg 725 130 -1;
+#X text 678 86 UP. DOWN;
+#X floatatom 705 225 5 0 0 0 - - -, f 5;
+#X text 656 64 Cabinet Select;
+#X obj 680 260 ctlout 71;
+#X obj 680 189 mod 16;
+#X text 44 12 Butun gelenler slider icindeki receive symbol kismina
+yazildi \, send receive kullanmadan direk aliyor, f 104;
+#X obj 800 107 bng 15 250 50 0 empty btn21 empty 17 7 0 10 -262144
+-1 -1;
+#X obj 845 108 bng 15 250 50 0 empty btn22 empty 17 7 0 10 -262144
+-1 -1;
+#X msg 800 129 1;
+#X obj 800 162 +, f 4;
+#X msg 845 130 -1;
+#X text 798 86 UP. DOWN;
+#X floatatom 825 225 5 0 0 0 - - -, f 5;
+#X obj 800 189 mod 16;
+#X text 780 64 Effect Select;
+#X obj 800 260 ctlout 19;
+#X floatatom 338 126 5 0 0 0 - - -, f 5;
+#X obj 341 78 hsl 128 15 0 127 0 0 empty sld36 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 335 59 Tweak (Effect Intensity);
+#X obj 338 150 ctlout 1;
+#X floatatom 621 238 5 0 0 0 - - AmpNum, f 5;
+#X floatatom 751 238 5 0 0 0 - - CabNum, f 5;
+#X floatatom 871 238 5 0 0 0 - - EfxNum, f 5;
+#X text 85 176 Nedense pd GUIden gelen sliderlar float geliyor int
+bu yüzden;
+#X obj 35 101 int;
+#X obj 188 101 int;
+#X obj 338 101 int;
+#X obj 35 261 int;
+#X obj 188 261 int;
+#X obj 338 261 int;
+#N canvas 164 208 826 379 AmpNames 0;
+#X obj 37 26 inlet;
+#X obj 405 317 print;
+#X text 393 340 Ekrana yaz ve GUIye gonder;
+#X obj 457 292 symbol;
+#X obj 309 263 send AmpN;
+#X obj 37 55 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+20 21 22 23 24 25 26 27 28 29 30 31, f 96;
+#X obj 406 265 receive AmpN;
+#X obj 457 317 send AmpName;
+#X msg 37 151 TUBE_PREAMP;
+#X msg 57 133 LINE_6_CLEAN;
+#X msg 78 115 LINE_6_CRUNCH;
+#X msg 99 97 LINE_6_DRIVE;
+#X msg 120 79 LINE_6_LAYER;
+#X msg 141 151 SMALL_TWEED;
+#X msg 161 133 TWEED_BLUES;
+#X msg 183 115 BLACK_PANEL;
+#X msg 204 97 MODERN_CLASS_A;
+#X msg 225 79 BRIT_CLASS_A;
+#X msg 246 151 BRIT_BLUES;
+#X msg 266 133 BRIT_CLASSIC;
+#X msg 287 115 BRIT_HI_GAIN;
+#X msg 308 97 TREADPLATE;
+#X msg 329 79 MODERN_HI_GAIN;
+#X msg 350 151 FUZZ_BOX;
+#X msg 371 133 JAZZ_CLEAN;
+#X msg 392 115 BOUTİQUE_#1;
+#X msg 413 97 BOUTIQUE_#2;
+#X msg 434 79 BRIT_CLASS_A_#2;
+#X msg 476 133 SMALL_TWEED_#2;
+#X msg 496 115 BLACK_PANEL_#2;
+#X msg 517 97 BOUTIQUE_#3;
+#X msg 538 79 CALIFORNIA_CRUNCH_#1;
+#X msg 559 151 CALIFORNIA_CRUNCH_#2;
+#X msg 580 133 TREADPLATE_#2;
+#X msg 601 115 MODERN_HI_GAIN_#2;
+#X msg 622 97 LINE_6_TWANG;
+#X msg 643 79 LINE_6_CRUNCH_#2;
+#X msg 664 151 LINE_6_BLUES;
+#X msg 685 133 LINE_6_INSANE;
+#X msg 455 151 BRIT_CLASS_A_#3;
+#X connect 0 0 5 0;
+#X connect 3 0 7 0;
+#X connect 5 0 8 0;
+#X connect 5 1 9 0;
+#X connect 5 2 10 0;
+#X connect 5 3 11 0;
+#X connect 5 4 12 0;
+#X connect 5 5 13 0;
+#X connect 5 6 14 0;
+#X connect 5 7 15 0;
+#X connect 5 8 16 0;
+#X connect 5 9 17 0;
+#X connect 5 10 18 0;
+#X connect 5 11 19 0;
+#X connect 5 12 20 0;
+#X connect 5 13 21 0;
+#X connect 5 14 22 0;
+#X connect 5 15 23 0;
+#X connect 5 16 24 0;
+#X connect 5 17 25 0;
+#X connect 5 18 26 0;
+#X connect 5 19 27 0;
+#X connect 5 20 39 0;
+#X connect 5 21 28 0;
+#X connect 5 22 29 0;
+#X connect 5 23 30 0;
+#X connect 5 24 31 0;
+#X connect 5 25 32 0;
+#X connect 5 26 33 0;
+#X connect 5 27 34 0;
+#X connect 5 28 35 0;
+#X connect 5 29 36 0;
+#X connect 5 30 37 0;
+#X connect 5 31 38 0;
+#X connect 6 0 1 0;
+#X connect 6 0 3 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
+#X connect 12 0 4 0;
+#X connect 13 0 4 0;
+#X connect 14 0 4 0;
+#X connect 15 0 4 0;
+#X connect 16 0 4 0;
+#X connect 17 0 4 0;
+#X connect 18 0 4 0;
+#X connect 19 0 4 0;
+#X connect 20 0 4 0;
+#X connect 21 0 4 0;
+#X connect 22 0 4 0;
+#X connect 23 0 4 0;
+#X connect 24 0 4 0;
+#X connect 25 0 4 0;
+#X connect 26 0 4 0;
+#X connect 27 0 4 0;
+#X connect 28 0 4 0;
+#X connect 29 0 4 0;
+#X connect 30 0 4 0;
+#X connect 31 0 4 0;
+#X connect 32 0 4 0;
+#X connect 33 0 4 0;
+#X connect 34 0 4 0;
+#X connect 35 0 4 0;
+#X connect 36 0 4 0;
+#X connect 37 0 4 0;
+#X connect 38 0 4 0;
+#X connect 39 0 4 0;
+#X restore 500 331 pd AmpNames;
+#N canvas 163 214 826 379 CabNames 0;
+#X obj 37 26 inlet;
+#X obj 406 317 print;
+#X text 393 340 Ekrana yaz ve GUIye gonder;
+#X obj 457 292 symbol;
+#X obj 37 55 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15, f 81;
+#X obj 309 263 send CabN;
+#X obj 406 265 receive CabN;
+#X obj 457 317 send CabName;
+#X msg 37 151 1x8"_60_FENDER_TWEED_CHAMP;
+#X msg 72 133 1X12"_52_FENDER_TWEED_DELUXE;
+#X msg 107 115 1X12"60_VOX_AC15;
+#X msg 142 97 1X12"_64_FENDER_BLACKFACE_DELUXE;
+#X msg 178 79 1X12"_98_LINE_6_FLEXTONE;
+#X msg 213 151 2X12"_65_FENDER_BLACKFACE_TWIN;
+#X msg 248 133 2X12"_67_VOX_AC30;
+#X msg 283 115 2X12"_95_MATCHLESS_CHIEFTAIN;
+#X msg 319 97 2X12"_98_POD_CUSTOM;
+#X msg 354 79 4X10"_59_FENDER_BASSMAN;
+#X msg 390 151 4X10"_98_POD_CUSTOM;
+#X msg 495 97 4X12"_97_MARSHALL_with_GREENBACKS;
+#X msg 530 79 4X12"_98_POD_CUSTOM;
+#X msg 565 151 ***_NO_CABINET_***;
+#X msg 425 133 4X12"_96_MARSHALL_with_V30s;
+#X msg 459 116 4X12"_78_MARSHALL_with_70s;
+#X connect 0 0 4 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 4 1 9 0;
+#X connect 4 2 10 0;
+#X connect 4 3 11 0;
+#X connect 4 4 12 0;
+#X connect 4 5 13 0;
+#X connect 4 6 14 0;
+#X connect 4 7 15 0;
+#X connect 4 8 16 0;
+#X connect 4 9 17 0;
+#X connect 4 10 18 0;
+#X connect 4 11 22 0;
+#X connect 4 12 23 0;
+#X connect 4 13 19 0;
+#X connect 4 14 20 0;
+#X connect 4 15 21 0;
+#X connect 6 0 1 0;
+#X connect 6 0 3 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 11 0 5 0;
+#X connect 12 0 5 0;
+#X connect 13 0 5 0;
+#X connect 14 0 5 0;
+#X connect 15 0 5 0;
+#X connect 16 0 5 0;
+#X connect 17 0 5 0;
+#X connect 18 0 5 0;
+#X connect 19 0 5 0;
+#X connect 20 0 5 0;
+#X connect 21 0 5 0;
+#X connect 22 0 5 0;
+#X connect 23 0 5 0;
+#X restore 628 331 pd CabNames;
+#N canvas 161 226 826 379 EfxNames 0;
+#X obj 37 26 inlet;
+#X obj 406 317 print;
+#X text 393 340 Ekrana yaz ve GUIye gonder;
+#X obj 457 292 symbol;
+#X obj 37 55 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15, f 81;
+#X obj 309 263 send EfxN;
+#X obj 406 265 receive EfxN;
+#X obj 457 317 send EfxName;
+#X msg 37 151 CHORUS_2;
+#X msg 72 133 FLANGER_1;
+#X msg 107 115 ROTARY;
+#X msg 142 97 FLANGER_2;
+#X msg 178 79 DELAY+CHORUS_1;
+#X msg 213 151 DELAY+TREMELO;
+#X msg 248 133 DELAY;
+#X msg 283 115 DELAY+COMPRESSOR;
+#X msg 319 97 CHORUS_1;
+#X msg 354 79 TREMELO;
+#X msg 390 151 ***_EFX_BYPASS_***;
+#X msg 424 133 COMPRESSOR;
+#X msg 460 116 DELAY+CHORUS_2;
+#X msg 495 97 DELAY+FLANGER_1;
+#X msg 530 79 DELAY+SWELL;
+#X msg 565 151 DELAY+FLANGER_2;
+#X connect 0 0 4 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 4 1 9 0;
+#X connect 4 2 10 0;
+#X connect 4 3 11 0;
+#X connect 4 4 12 0;
+#X connect 4 5 13 0;
+#X connect 4 6 14 0;
+#X connect 4 7 15 0;
+#X connect 4 8 16 0;
+#X connect 4 9 17 0;
+#X connect 4 10 18 0;
+#X connect 4 11 19 0;
+#X connect 4 12 20 0;
+#X connect 4 13 21 0;
+#X connect 4 14 22 0;
+#X connect 4 15 23 0;
+#X connect 6 0 1 0;
+#X connect 6 0 3 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 11 0 5 0;
+#X connect 12 0 5 0;
+#X connect 13 0 5 0;
+#X connect 14 0 5 0;
+#X connect 15 0 5 0;
+#X connect 16 0 5 0;
+#X connect 17 0 5 0;
+#X connect 18 0 5 0;
+#X connect 19 0 5 0;
+#X connect 20 0 5 0;
+#X connect 21 0 5 0;
+#X connect 22 0 5 0;
+#X connect 23 0 5 0;
+#X restore 758 331 pd EfxNames;
+#X connect 0 0 5 0;
+#X connect 1 0 60 0;
+#X connect 2 0 6 0;
+#X connect 3 0 61 0;
+#X connect 8 0 17 0;
+#X connect 9 0 63 0;
+#X connect 10 0 18 0;
+#X connect 11 0 64 0;
+#X connect 12 0 19 0;
+#X connect 13 0 65 0;
+#X connect 20 0 22 0;
+#X connect 21 0 24 0;
+#X connect 22 0 23 0;
+#X connect 23 0 29 0;
+#X connect 24 0 23 0;
+#X connect 28 0 23 1;
+#X connect 28 0 26 0;
+#X connect 28 0 56 0;
+#X connect 28 0 66 0;
+#X connect 29 0 28 0;
+#X connect 31 0 33 0;
+#X connect 32 0 35 0;
+#X connect 33 0 34 0;
+#X connect 34 0 40 0;
+#X connect 35 0 34 0;
+#X connect 37 0 34 1;
+#X connect 37 0 39 0;
+#X connect 37 0 57 0;
+#X connect 37 0 67 0;
+#X connect 40 0 37 0;
+#X connect 42 0 44 0;
+#X connect 43 0 46 0;
+#X connect 44 0 45 0;
+#X connect 45 0 49 0;
+#X connect 46 0 45 0;
+#X connect 48 0 45 1;
+#X connect 48 0 51 0;
+#X connect 48 0 58 0;
+#X connect 48 0 68 0;
+#X connect 49 0 48 0;
+#X connect 52 0 55 0;
+#X connect 53 0 62 0;
+#X connect 60 0 0 0;
+#X connect 61 0 2 0;
+#X connect 62 0 52 0;
+#X connect 63 0 8 0;
+#X connect 64 0 10 0;
+#X connect 65 0 12 0;
+#X restore 124 48 pd AmpCabEffects;
+#N canvas 578 296 558 379 PresenceStompEtc 0;
+#X floatatom 50 273 5 0 0 0 - - -, f 5;
+#X obj 53 222 hsl 128 15 0 127 0 0 empty sld12 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 209 273 5 0 0 0 - - -, f 5;
+#X obj 212 222 hsl 128 15 0 127 0 0 empty sld13 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 44 130 5 0 0 0 - - -, f 5;
+#X obj 44 77 route 0 1;
+#X msg 44 101 0;
+#X msg 81 101 64;
+#X obj 44 54 tgl 15 0 empty btn11 empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X floatatom 204 130 5 0 0 0 - - -, f 5;
+#X obj 204 77 route 0 1;
+#X msg 204 101 0;
+#X msg 241 101 64;
+#X obj 204 54 tgl 15 0 empty btn12 empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 364 130 5 0 0 0 - - -, f 5;
+#X obj 364 77 route 0 1;
+#X msg 364 101 0;
+#X msg 401 101 64;
+#X obj 364 54 tgl 15 0 empty btn13 empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 67 54 Stomp Enable;
+#X text 227 54 Presence Boost;
+#X text 387 54 Bright Switch;
+#X text 48 203 Amp 1 Presence;
+#X text 205 203 A.I.R Ambience Level;
+#X obj 44 151 ctlout 25;
+#X obj 204 151 ctlout 27;
+#X obj 364 151 ctlout 73;
+#X obj 50 294 ctlout 21;
+#X obj 209 294 ctlout 72;
+#X obj 50 249 int;
+#X obj 209 249 int;
+#X connect 0 0 27 0;
+#X connect 1 0 29 0;
+#X connect 2 0 28 0;
+#X connect 3 0 30 0;
+#X connect 4 0 24 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X connect 9 0 25 0;
+#X connect 10 0 11 0;
+#X connect 10 1 12 0;
+#X connect 11 0 9 0;
+#X connect 12 0 9 0;
+#X connect 13 0 10 0;
+#X connect 14 0 26 0;
+#X connect 15 0 16 0;
+#X connect 15 1 17 0;
+#X connect 16 0 14 0;
+#X connect 17 0 14 0;
+#X connect 18 0 15 0;
+#X connect 29 0 0 0;
+#X connect 30 0 2 0;
+#X restore 130 80 pd PresenceStompEtc;
+#N canvas 101 221 1013 300 NetGonderilecekler 0;
+#X floatatom 81 39 5 0 0 0 - sld36 -, f 5;
+#X msg 81 91 send \$2 \$1;
+#X obj 134 16 loadbang;
+#X obj 81 63 pack 0 s;
+#X obj 81 120 send NetYolla;
+#X floatatom 301 39 5 0 0 0 - sld1 -, f 5;
+#X msg 301 91 send \$2 \$1;
+#X obj 354 16 loadbang;
+#X obj 301 63 pack 0 s;
+#X obj 301 120 send NetYolla;
+#X msg 354 38 symbol Amp.Chan.Vol;
+#X msg 134 38 symbol Tweak/Effects;
+#X floatatom 81 179 5 0 0 0 - sld7 -, f 5;
+#X msg 81 231 send \$2 \$1;
+#X obj 134 156 loadbang;
+#X obj 81 203 pack 0 s;
+#X obj 81 260 send NetYolla;
+#X msg 134 178 symbol Vol.PedalMin;
+#X floatatom 291 158 5 0 0 0 - VolPrePost -, f 5;
+#X obj 291 264 send NetYolla;
+#X msg 291 199 symbol Vol.Pre-Amp.Model;
+#X msg 291 222 symbol Vol.Post-Amp.Model;
+#X obj 291 177 route 0;
+#X msg 291 243 send \$1;
+#X obj 524 38 receive PresetName;
+#X text 500 1 Preset ismini networkten gondermek icin;
+#X msg 611 91 send \$2 \$1;
+#X obj 664 16 loadbang;
+#X obj 611 120 send NetYolla;
+#X msg 664 38 symbol Preset:;
+#X obj 611 63 pack s s;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 11 0;
+#X connect 3 0 1 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 7 0 10 0;
+#X connect 8 0 6 0;
+#X connect 10 0 8 1;
+#X connect 11 0 3 1;
+#X connect 12 0 15 0;
+#X connect 13 0 16 0;
+#X connect 14 0 17 0;
+#X connect 15 0 13 0;
+#X connect 17 0 15 1;
+#X connect 18 0 22 0;
+#X connect 20 0 23 0;
+#X connect 21 0 23 0;
+#X connect 22 0 20 0;
+#X connect 22 1 21 0;
+#X connect 23 0 19 0;
+#X connect 24 0 30 0;
+#X connect 26 0 28 0;
+#X connect 27 0 29 0;
+#X connect 29 0 30 1;
+#X connect 30 0 26 0;
+#X restore 104 178 pd NetGonderilecekler;
+#N canvas 150 126 577 336 Delay 0;
+#X floatatom 232 111 5 0 0 0 - - -, f 5;
+#X obj 235 61 hsl 128 15 0 127 0 0 empty sld14 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 391 111 5 0 0 0 - - -, f 5;
+#X obj 394 61 hsl 128 15 0 127 0 0 empty sld16 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 47 114 5 0 0 0 - - -, f 5;
+#X obj 47 61 route 0 1;
+#X msg 47 85 0;
+#X msg 84 85 64;
+#X obj 47 38 tgl 15 0 empty btn14 empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 232 86 int;
+#X obj 391 86 int;
+#X floatatom 232 251 5 0 0 0 - - -, f 5;
+#X obj 235 201 hsl 128 15 0 127 0 0 empty sld17 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 232 226 int;
+#X floatatom 47 251 5 0 0 0 - - -, f 5;
+#X obj 50 201 hsl 128 15 0 127 0 0 empty sld15 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 47 226 int;
+#X text 70 38 Delay Enable;
+#X obj 47 135 ctlout 28;
+#X text 228 42 Delay Time (prm1 MSB);
+#X text 387 42 Delay Time (Fine Tuning);
+#X text 45 182 Delay Regeneration;
+#X text 228 182 Delay Mix;
+#X obj 232 133 ctlout 30;
+#X obj 391 133 ctlout 62;
+#X obj 47 273 ctlout 32;
+#X obj 232 273 ctlout 34;
+#X connect 0 0 23 0;
+#X connect 1 0 9 0;
+#X connect 2 0 24 0;
+#X connect 3 0 10 0;
+#X connect 4 0 18 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X connect 9 0 0 0;
+#X connect 10 0 2 0;
+#X connect 11 0 26 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 25 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X restore 29 112 pd Delay;
+#N canvas 447 282 764 330 Reverb 0;
+#X floatatom 232 111 5 0 0 0 - - -, f 5;
+#X obj 235 61 hsl 128 15 0 127 0 0 empty sld18 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 391 111 5 0 0 0 - - -, f 5;
+#X obj 394 61 hsl 128 15 0 127 0 0 empty sld19 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 47 114 5 0 0 0 - - -, f 5;
+#X obj 47 61 route 0 1;
+#X msg 47 85 0;
+#X msg 84 85 64;
+#X obj 47 38 tgl 15 0 empty btn15 empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 232 86 int;
+#X obj 391 86 int;
+#X floatatom 416 251 5 0 0 0 - - -, f 5;
+#X obj 419 201 hsl 128 15 0 127 0 0 empty sld22 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 416 226 int;
+#X floatatom 231 251 5 0 0 0 - - -, f 5;
+#X obj 234 201 hsl 128 15 0 127 0 0 empty sld21 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 231 226 int;
+#X floatatom 551 111 5 0 0 0 - - -, f 5;
+#X obj 554 61 hsl 128 15 0 127 0 0 empty sld20 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 551 86 int;
+#X floatatom 47 254 5 0 0 0 - - -, f 5;
+#X obj 47 201 route 0 1;
+#X msg 47 225 0;
+#X msg 84 225 64;
+#X obj 47 178 tgl 15 0 empty btn16 empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 70 38 Reverb Enable;
+#X obj 47 135 ctlout 36;
+#X text 70 170 Reveb Model (Spring-Room);
+#X obj 47 275 ctlout 37;
+#X text 228 42 Reverb Level;
+#X text 387 42 Reverb Decay;
+#X text 547 42 Reverb Tone;
+#X text 229 182 Reverb Diffusion;
+#X obj 232 133 ctlout 18;
+#X obj 391 133 ctlout 38;
+#X obj 551 133 ctlout 39;
+#X obj 231 273 ctlout 40;
+#X obj 416 273 ctlout 41;
+#X text 413 182 Reverb Density;
+#X connect 0 0 33 0;
+#X connect 1 0 9 0;
+#X connect 2 0 34 0;
+#X connect 3 0 10 0;
+#X connect 4 0 26 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X connect 9 0 0 0;
+#X connect 10 0 2 0;
+#X connect 11 0 37 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 36 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X connect 17 0 35 0;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;
+#X connect 20 0 28 0;
+#X connect 21 0 22 0;
+#X connect 21 1 23 0;
+#X connect 22 0 20 0;
+#X connect 23 0 20 0;
+#X connect 24 0 21 0;
+#X restore 102 112 pd Reverb;
+#N canvas 445 294 407 167 Compressor 0;
+#X floatatom 232 111 5 0 0 0 - - -, f 5;
+#X obj 235 61 hsl 128 15 0 127 0 0 empty sld23 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 47 114 5 0 0 0 - - -, f 5;
+#X obj 47 61 route 0 1;
+#X msg 47 85 0;
+#X msg 84 85 64;
+#X obj 47 38 tgl 15 0 empty btn17 empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 232 86 int;
+#X text 70 38 Comp Enable;
+#X text 228 42 Compressor Ratio;
+#X obj 47 135 ctlout 26;
+#X obj 232 133 ctlout 42;
+#X connect 0 0 11 0;
+#X connect 1 0 7 0;
+#X connect 2 0 10 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 3 0;
+#X connect 7 0 0 0;
+#X restore 181 112 pd Compressor;
+#N canvas 446 288 561 316 Chorus-Flange 0;
+#X floatatom 232 111 5 0 0 0 - - -, f 5;
+#X obj 235 61 hsl 128 15 0 127 0 0 empty sld27 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 391 111 5 0 0 0 - - -, f 5;
+#X obj 394 61 hsl 128 15 0 127 0 0 empty sld28 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 47 114 5 0 0 0 - - -, f 5;
+#X obj 47 61 route 0 1;
+#X msg 47 85 0;
+#X msg 84 85 64;
+#X obj 47 38 tgl 15 0 empty btn19 empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 232 86 int;
+#X obj 391 86 int;
+#X floatatom 391 251 5 0 0 0 - - -, f 5;
+#X obj 394 201 hsl 128 15 0 127 0 0 empty sld30 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 391 226 int;
+#X floatatom 231 251 5 0 0 0 - - -, f 5;
+#X obj 234 201 hsl 128 15 0 127 0 0 empty sld29 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 231 226 int;
+#X text 70 38 Mod Enable;
+#X obj 47 135 ctlout 50;
+#X text 228 42 Chorus/Flange Speed;
+#X text 387 42 Chorus/Flange Depth;
+#X text 229 182 Vhorus/Flange Regen.;
+#X text 388 182 Chorus Pre Delay;
+#X obj 232 133 ctlout 51;
+#X obj 391 133 ctlout 52;
+#X obj 231 273 ctlout 53;
+#X obj 391 273 ctlout 54;
+#X connect 0 0 23 0;
+#X connect 1 0 9 0;
+#X connect 2 0 24 0;
+#X connect 3 0 10 0;
+#X connect 4 0 18 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X connect 9 0 0 0;
+#X connect 10 0 2 0;
+#X connect 11 0 26 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 25 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X restore 28 142 pd Chorus-Flange;
+#N canvas 638 285 516 316 Rotary-Tremelo 0;
+#X floatatom 202 111 5 0 0 0 - - -, f 5;
+#X obj 205 61 hsl 128 15 0 127 0 0 empty sld31 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 361 111 5 0 0 0 - - -, f 5;
+#X obj 364 61 hsl 128 15 0 127 0 0 empty sld34 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 202 86 int;
+#X obj 361 86 int;
+#X floatatom 361 251 5 0 0 0 - - -, f 5;
+#X obj 364 201 hsl 128 15 0 127 0 0 empty sld35 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 361 226 int;
+#X floatatom 201 251 5 0 0 0 - - -, f 5;
+#X obj 204 201 hsl 128 15 0 127 0 0 empty sld33 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 201 226 int;
+#X floatatom 42 251 5 0 0 0 - - -, f 5;
+#X obj 45 201 hsl 128 15 0 127 0 0 empty sld32 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 42 226 int;
+#X text 78 10 Tap Tempo;
+#X text 198 42 Rotary Speed;
+#X text 357 42 Tremelo Speed;
+#X text 38 182 Rotary Max Speed;
+#X text 199 182 Rotary Min Speed;
+#X text 359 184 Tremelo Depth;
+#X obj 202 133 ctlout 55;
+#X obj 361 133 ctlout 58;
+#X obj 42 273 ctlout 56;
+#X obj 201 273 ctlout 57;
+#X obj 361 273 ctlout 59;
+#X floatatom 47 134 5 0 0 0 - - -, f 5;
+#X msg 47 105 0;
+#X msg 84 105 64;
+#X obj 47 155 ctlout 64;
+#X obj 47 13 bng 15 250 50 0 empty btn20 empty 17 7 0 10 -262144 -1
+-1;
+#X obj 47 81 select 0 1;
+#X msg 30 59 1;
+#X obj 61 33 delay 200;
+#X msg 69 59 0;
+#X connect 0 0 21 0;
+#X connect 1 0 4 0;
+#X connect 2 0 22 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 25 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 9 0 24 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X connect 12 0 23 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 26 0 29 0;
+#X connect 27 0 26 0;
+#X connect 28 0 26 0;
+#X connect 30 0 32 0;
+#X connect 30 0 33 0;
+#X connect 31 0 27 0;
+#X connect 31 1 28 0;
+#X connect 32 0 31 0;
+#X connect 33 0 34 0;
+#X connect 34 0 31 0;
+#X restore 158 142 pd Rotary-Tremelo;
+#N canvas 2 93 1278 633 GUI 1;
+#X obj 27 3 cnv 15 240 504 empty empty empty 20 12 0 14 -203904 -66577
+0;
+#X obj 40 70 hradio 20 1 0 10 FavNum empty SELECT_FAV_PRESET 0 -8 0
+15 -4034 -1 -1 0;
+#X obj 74 112 bng 30 250 50 0 btn1 empty UP 35 17 0 15 -261682 -258113
+-1;
+#X obj 74 170 bng 30 250 50 0 btn2 empty DWN 35 17 0 15 -261682 -258113
+-1;
+#X obj 168 112 bng 30 250 50 0 btn3 empty UP 35 17 0 15 -261682 -258113
+-1;
+#X obj 168 170 bng 30 250 50 0 btn4 empty DWN 35 17 0 15 -261682 -258113
+-1;
+#X text 77 94 ALL;
+#X text 170 94 FAV;
+#X floatatom 73 149 5 0 0 0 - PrstNum -, f 5;
+#X obj 52 248 bng 30 250 50 0 btn5 empty UP 35 17 0 15 -204786 -258113
+-1;
+#X obj 52 306 bng 30 250 50 0 btn6 empty DWN 35 17 0 15 -204786 -258113
+-1;
+#X floatatom 51 285 5 0 0 0 - AmpNum -, f 5;
+#X text 55 230 AMP;
+#X obj 122 248 bng 30 250 50 0 btn7 empty UP 35 17 0 15 -261234 -258113
+-1;
+#X obj 122 306 bng 30 250 50 0 btn8 empty DWN 35 17 0 15 -261234 -258113
+-1;
+#X floatatom 121 285 5 0 0 0 - CabNum -, f 5;
+#X obj 192 248 bng 30 250 50 0 btn21 empty UP 35 17 0 15 -262130 -258113
+-1;
+#X obj 192 306 bng 30 250 50 0 btn22 empty DWN 35 17 0 15 -262130 -258113
+-1;
+#X floatatom 191 285 5 0 0 0 - EfxNum -, f 5;
+#X text 194 230 EFX;
+#X text 108 230 CABINET;
+#X floatatom 168 149 5 0 0 0 - FavIndex -, f 5;
+#X obj 41 466 hsl 200 30 0 127 0 0 sld36 sld36 TWEAK_EFFECTS 0 -8 0
+15 -191407 -1 -1 0 1;
+#X obj 273 3 cnv 15 240 240 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 293 27 hsl 200 30 0 127 0 0 sld3 sld3 VOLUME_PEDAL 0 -8 0 15
+-191407 -1 -1 0 1;
+#X obj 293 82 hsl 200 30 0 127 0 0 sld7 sld7 VOLUME_PEDAL_MIN 0 -8
+0 15 -191407 -1 -1 0 1;
+#X obj 293 192 hsl 200 30 0 127 0 0 sld9 sld9 SWELL_RAMP_TIME 0 -8
+0 15 -191407 -1 -1 0 1;
+#X obj 293 120 tgl 20 0 btn9 btn9 VOLUME_PRE_POST 25 10 0 12 -4034
+-1 -1 0 1;
+#X obj 293 147 tgl 20 0 btn23 btn23 VOLUME_SWELL 25 10 0 12 -4034 -1
+-1 0 1;
+#X obj 273 249 cnv 15 240 373 empty empty empty 20 12 0 14 -204786
+-66577 0;
+#X obj 293 356 hsl 200 30 0 127 0 0 sld2 sld2 DRIVE 0 -8 0 15 -191407
+-1 -1 0 1;
+#X obj 293 411 hsl 200 30 0 127 0 0 sld4 sld4 BASS 0 -8 0 15 -191407
+-1 -1 0 1;
+#X obj 293 466 hsl 200 30 0 127 0 0 sld5 sld5 MID 0 -8 0 15 -191407
+-1 -1 0 1;
+#X obj 293 521 hsl 200 30 0 127 0 0 sld6 sld6 TREBLE 0 -8 0 15 -191407
+-1 -1 0 1;
+#X obj 293 301 hsl 200 30 0 127 0 0 sld1 sld1 CHANNEL_VOLUME 0 -8 0
+15 -191407 -1 -1 0 1;
+#X obj 293 576 hsl 200 30 0 127 0 0 sld8 sld8 DRIVE2_only_AMP.LAYER
+0 -8 0 15 -191407 -1 -1 0 1;
+#X obj 293 252 tgl 20 0 btn11 btn11 STOMP 25 10 0 12 -4034 -1 -1 0
+1;
+#X obj 403 252 tgl 20 0 btn13 btn13 BRIGHT_SW 25 10 0 12 -4034 -1 -1
+0 1;
+#X obj 27 512 cnv 15 240 110 empty empty empty 20 12 0 14 -261682 -66577
+0;
+#X obj 41 576 hsl 200 30 0 127 0 0 sld23 sld23 COMPRESSION_RATIO 0
+-8 0 15 -191407 -1 -1 0 1;
+#X obj 41 529 tgl 20 0 btn17 btn17 COMPRESSOR 25 10 0 12 -4034 -1 -1
+0 1;
+#X obj 41 529 tgl 20 0 btn17 btn17 COMPRESSOR 25 10 0 12 -4034 -1 -1
+0 1;
+#X obj 519 3 cnv 15 240 180 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X obj 539 82 hsl 200 30 0 127 0 0 sld12 sld12 PRESENCE 0 -8 0 15 -191407
+-1 -1 0 1;
+#X obj 539 137 hsl 200 30 0 127 0 0 sld13 sld13 A.I.R._AMBIENCE_LEVEL
+0 -8 0 15 -191407 -1 -1 0 1;
+#X obj 541 32 tgl 20 0 btn12 btn12 PRESENCE_BOOST 25 10 0 12 -4034
+-1 -1 0 1;
+#X obj 519 457 cnv 15 240 165 empty empty empty 20 12 0 14 -203904
+-66577 0;
+#X obj 539 522 hsl 200 30 32 127 0 0 sld10 sld10 GATE_TRESHOLD 0 -8
+0 15 -191407 -1 -1 0 1;
+#X obj 539 576 hsl 200 30 0 127 0 0 sld11 sld11 GATE_DECAY_TIME 0 -8
+0 15 -191407 -1 -1 0 1;
+#X obj 539 474 tgl 20 0 btn10 btn10 NOISE_GATE 25 10 0 12 -4034 -1
+-1 0 1;
+#X obj 519 189 cnv 15 240 262 empty empty empty 20 12 0 14 -261234
+-66577 0;
+#X obj 539 247 hsl 200 30 0 127 0 0 sld14 sld14 DELAY_TIME(Coarse)
+0 -8 0 15 -191407 -1 -1 0 1;
+#X obj 539 356 hsl 200 30 0 127 0 0 sld15 sld15 DELAY_REGENERATION
+0 -8 0 15 -191407 -1 -1 0 1;
+#X obj 539 301 hsl 200 30 0 127 0 0 sld16 sld16 DELAY_TIME_(Fine) 0
+-8 0 15 -191407 -1 -1 0 1;
+#X obj 539 411 hsl 200 30 0 127 0 0 sld17 sld17 DELAY_MIX 0 -8 0 15
+-191407 -1 -1 0 1;
+#X obj 541 199 tgl 20 0 btn14 btn14 DELAY 25 10 0 12 -4034 -1 -1 0
+1;
+#X obj 765 3 cnv 15 240 376 empty empty empty 20 12 0 14 -204800 -66577
+0;
+#X obj 784 82 hsl 200 30 0 127 0 0 sld18 sld18 REVERB_LEVEL 0 -8 0
+15 -191407 -1 -1 0 1;
+#X obj 784 247 hsl 200 30 0 127 0 0 sld19 sld19 REVERB_DECAY 0 -8 0
+15 -191407 -1 -1 0 1;
+#X obj 784 192 hsl 200 30 0 127 0 0 sld20 sld20 REVERB_TONE 0 -8 0
+15 -191407 -1 -1 0 1;
+#X obj 784 303 hsl 200 30 0 127 0 0 sld21 sld21 REVERB_DIFFUSION 0
+-8 0 15 -191407 -1 -1 0 1;
+#X obj 784 137 hsl 200 30 0 127 0 0 sld22 sld22 REVERB_DENSITY 0 -8
+0 15 -191407 -1 -1 0 1;
+#X obj 786 32 tgl 20 0 btn15 btn15 REVERB 25 10 0 12 -4034 -1 -1 0
+1;
+#X obj 874 32 tgl 20 0 btn16 btn16 REVERB_MODEL 25 10 0 12 -4034 -1
+-1 0 1;
+#X obj 765 385 cnv 15 240 237 empty empty empty 20 12 0 14 -232576
+-66577 0;
+#X obj 784 467 hsl 200 30 0 127 0 0 sld24 empty WAH_POSITION 0 -8 0
+15 -191407 -1 -1 0 1;
+#X obj 784 522 hsl 200 30 0 127 0 0 sld25 sld25 WAH_BOTTOM_FREQUENCY
+0 -8 0 15 -191407 -1 -1 0 1;
+#X obj 784 577 hsl 200 30 0 127 0 0 sld26 sld26 WAH_TOP_FEQUENCY 0
+-8 0 15 -191407 -1 -1 0 1;
+#X obj 784 418 tgl 20 0 btn18 btn18 WAH 25 10 0 12 -4034 -1 -1 0 1
+;
+#X obj 1011 3 cnv 15 240 293 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 1034 82 hsl 200 30 0 127 0 0 sld27 sld27 CHORUS/FLANGE_SPEED
+0 -8 0 15 -191407 -1 -1 0 1;
+#X obj 1034 137 hsl 200 30 0 127 0 0 sld28 sld28 CHORUS/FLANGE_DEPTH
+0 -8 0 15 -191407 -1 -1 0 1;
+#X obj 1034 192 hsl 200 30 0 127 0 0 sld29 sld29 CHORUS/FLANGE_REGEN
+0 -8 0 15 -191407 -1 -1 0 1;
+#X obj 1034 247 hsl 200 30 0 127 0 0 sld30 sld30 CHORUS_PRE_DELAY 0
+-8 0 15 -191407 -1 -1 0 1;
+#X obj 1034 32 tgl 20 0 btn19 btn19 MODULATION 25 10 0 12 -4034 -1
+-1 0 1;
+#X obj 1011 302 cnv 15 240 320 empty empty empty 20 12 0 14 -261682
+-66577 0;
+#X obj 1034 357 hsl 200 30 0 127 0 0 sld31 sld31 ROTARY_SPEED 0 -8
+0 15 -191407 -1 -1 0 1;
+#X obj 1034 412 hsl 200 30 0 127 0 0 sld32 sld32 ROTARY_MAX_SPEED 0
+-8 0 15 -191407 -1 -1 0 1;
+#X obj 1034 468 hsl 200 30 0 127 0 0 sld33 sld33 ROTARY_MIN_SPEED 0
+-8 0 15 -191407 -1 -1 0 1;
+#X obj 1034 523 hsl 200 30 0 127 0 0 sld34 sld34 TREMELO_SPEED 0 -8
+0 15 -191407 -1 -1 0 1;
+#X obj 1034 578 hsl 200 30 0 127 0 0 sld35 sld35 TREMELO_DEPTH 0 -8
+0 15 -191407 -1 -1 0 1;
+#X obj 1173 316 bng 30 250 50 0 btn20 empty TAP 35 17 0 15 -260097
+-258113 -1;
+#X text 1131 317 TEMPO;
+#X obj 865 418 tgl 20 0 BaglaX empty TIE_TO_SENSOR 25 10 0 12 -4034
+-1 -1 0 1;
+#X obj 27 3 cnv 15 240 40 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X floatatom 216 17 3 0 0 0 - NumClients -, f 3;
+#X text 76 16 Connected Clients;
+#X obj 41 13 tgl 20 0 empty Connected empty 17 7 0 10 -262130 -1 -1
+0 1;
+#X obj 27 209 cnv 15 240 15 empty empty empty 20 12 0 14 -261682 -66577
+0;
+#X obj 27 362 cnv 15 240 15 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X symbolatom 27 362 34 0 0 0 - AmpName -, f 34;
+#X obj 27 395 cnv 15 240 15 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X symbolatom 27 395 34 0 0 0 - CabName -, f 34;
+#X obj 27 428 cnv 15 240 15 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X symbolatom 27 428 34 0 0 0 - EfxName -, f 34;
+#X text 27 347 Amp Type;
+#X text 27 381 Cabinet Type;
+#X text 27 414 Effect Type;
+#X symbolatom 27 209 34 0 0 0 - PresetName -, f 34;
+#X restore 101 214 pd GUI;
+#N canvas 512 221 692 303 Wah 0;
+#X floatatom 386 154 5 0 0 0 - - -, f 5;
+#X obj 389 104 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 47 114 5 0 0 0 - - -, f 5;
+#X obj 47 61 route 0 1;
+#X msg 47 85 0;
+#X msg 84 85 64;
+#X obj 47 38 tgl 15 0 empty btn18 empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 386 129 int;
+#X text 70 38 Wah Enable;
+#X obj 47 135 ctlout 43;
+#X text 428 85 Wah Position;
+#X floatatom 50 244 5 0 0 0 - - -, f 5;
+#X obj 53 194 hsl 128 15 0 127 0 0 empty sld25 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 50 219 int;
+#X floatatom 200 244 5 0 0 0 - - -, f 5;
+#X obj 203 194 hsl 128 15 0 127 0 0 empty sld26 empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 200 219 int;
+#X text 46 175 Wah Bottom Freq;
+#X text 196 175 Wah Top Freq;
+#X obj 386 176 ctlout 4;
+#X obj 50 266 ctlout 44;
+#X obj 200 266 ctlout 45;
+#X obj 425 39 tgl 15 0 empty BaglaX empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 448 39 Tie to Sensor;
+#X text 191 10 Cep Telefonundan gelen snesore baglama;
+#X floatatom 336 39 5 0 0 0 - sld24 -, f 5;
+#X obj 386 62 spigot;
+#X floatatom 378 39 5 0 0 0 - x -, f 5;
+#X connect 0 0 19 0;
+#X connect 1 0 7 0;
+#X connect 2 0 9 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 3 0;
+#X connect 7 0 0 0;
+#X connect 11 0 20 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 21 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X connect 22 0 26 1;
+#X connect 25 0 1 0;
+#X connect 26 0 1 0;
+#X connect 27 0 26 0;
+#X restore 285 112 pd Wah;
