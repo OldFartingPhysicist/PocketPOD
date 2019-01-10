@@ -47,4 +47,4 @@ Program A
 
 Program B
 1. It can change presets via with Pure Data using MIDI SysEX messages. I have used very valuable information from Gdigi project (https://desowin.org/gdigi/). Again, thanks to its developer!
-(Edit add details)
+(Edit add details and program files!)
