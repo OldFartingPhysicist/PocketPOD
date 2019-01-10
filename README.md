@@ -28,7 +28,7 @@ Program functions:
 1. Pure Data GUI developed to control all functions of the pedal on single screen.
 2. Can read input from Raspberry Pi GPIO pins and Potentiometers (ADC MCP3008) and drive LEDs accordingly. You can change presets, volume, drive level, effects level etc. using this hardwired interface.
 3. Can get input remotely from cell phone using RoboRemo android program. (https://www.roboremo.com/ Thanks to RoboRemo developer, it is a really handy application for any kind of direct control over WiFi or Bluetooth)
-4. Using RoboRemo, you can tie cell phone motion sensors to any effect. For example in my program, mobile phone X direction sensor connected to Wah Wah effect. Shake you phone and get Wah Wah effect :).
+4. Using RoboRemo, you can tie cell phone motion sensors to any effect. For example in my program, mobile phone X direction sensor connected to Wah Wah effect. Shake your phone and get Wah Wah effect :).
 
 What help I need to develop: 
 1. I wrote over 100 preset names by hand under [pd PresetNames]. It will be good to read these preset names from the device.
