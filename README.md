@@ -16,11 +16,19 @@ Video:
 ------
 You may see Pocket POD control videos from below links:
 
+Demo with Pocket POD connected to Raspberry Pi.
+https://youtu.be/U2I2CBarQQ8
+
+PD & MIDI Configuration.
+https://youtu.be/n9fUughpuog
+
 Sending commands to Pocket POD using PD Patch. You may use VNC to connect remotely to Raspberry Pi Zero W. Therefore this full GUI also works over WiFi.
 https://youtu.be/KgRP33Cb9XA
 
 Remote connection using WiFi & Cell phone. Connection with RoboRemo application.
 https://youtu.be/Mi8RPiiXM-o
+
+
 
 Below are the functions that are tested and working.
 
