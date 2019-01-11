@@ -52,7 +52,7 @@ Digitech RP250 Program Functions:
 ----------------------------------
 
 About this device: 
-1. Pedal uses MIDI SysEX (Sytem Exclusive) to change presets etc. So if you know the control commands it is straightforward to control it with Pure Data.
+1. Pedal uses MIDI SysEX (System Exclusive) to change presets etc. So if you know the control commands it is straightforward to control it with Pure Data.
 2. Most interestingly, any computer or Raspberry Pi can identify this device as a MIDI device and a Sound Card over USB. BOTH interfaces TOGETHER! So it makes possible to control device with MIDI and record guitar sound together. I succesfully recorded guitar sound using Pure Data and I am currently trying to make a Looper patch.
 3. RP250 is fantastic as a USB Soundcard! It works in both ways, you can either record sound over USB or send sound to RP250 and listen through the connected amplifier. Therefore I have used Pure Data [readsf~] and [dac~] functions to playback pre recorded voice messages like "preset changed", "remote user connected" etc.
 
