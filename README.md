@@ -15,7 +15,7 @@ Target:
 3. To make available all function in a single GUI. Pocket POD is a beautiful small device, but it has limited buttons and potentiometers on it. Therefore you cannot edit all functions easily, you have to dig in menus. Instead of this, you may see and control all parameters on a GUI. 
 
 
-![An image from part of PD patch PocketPOD.pd](PocketPOD/PD_Main_PockedPOD.PNG)
+![An image from part of PD patch PocketPOD.pd](images/PD_Main_PockedPOD.PNG)
 
 
 Video:
