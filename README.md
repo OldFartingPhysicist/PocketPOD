@@ -14,9 +14,11 @@ Target:
 2. To make available some functions of multi effects pedals via GUI or physical interface. For example Pocket POD has built in Wah Wah effect however there is no effect pedal connection to this device. You may find the interface details for each effect pedal below.
 3. To make available all function in a single GUI. Pocket POD is a beautiful small device, but it has limited buttons and potentiometers on it. Therefore you cannot edit all functions easily, you have to dig in menus. Instead of this, you may see and control all parameters on a GUI. 
 
-
+**An image from part of PD patch PocketPOD.pd**
 ![An image from part of PD patch PocketPOD.pd](images/PD_Main_PockedPOD.PNG)
 
+**RoboRemo GUI on Android Phone**
+![RoboRemo GUI on Android Phone](images/RoboRemo_ScrrenShot1.PNG)
 
 Video:
 ------
