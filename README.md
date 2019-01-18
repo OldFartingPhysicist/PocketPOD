@@ -15,9 +15,11 @@ Target:
 3. To make available all function in a single GUI. Pocket POD is a beautiful small device, but it has limited buttons and potentiometers on it. Therefore you cannot edit all functions easily, you have to dig in menus. Instead of this, you may see and control all parameters on a GUI. 
 
 **An image from part of PD patch PocketPOD.pd**
+
 ![An image from part of PD patch PocketPOD.pd](images/PD_Main_PockedPOD.PNG)
 
 **RoboRemo GUI on Android Phone**
+
 ![RoboRemo GUI on Android Phone](images/RoboRemo_ScrrenShot1.png)
 
 Video:
@@ -55,6 +57,8 @@ Line6 Pocket POD Program Functions:
 1. I wrote over 100 preset names by hand under [pd PresetNames]. It will be good to read these preset names from the device.
 2. If presets changed it will be good to write new presets to the device as it works with its own PC program Vyzex.
 I believe both of these functions can be done with MIDI SysEX (Sytem Exclusive) messages.
+
+**GUI screenshot from PD patch PocketPOD.pd**
 
 ![PD patch PocketPOD.pd GUI](images/PD_GUI_PocketPOD.PNG)
 
