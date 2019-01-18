@@ -1,0 +1,27 @@
+#N canvas 559 108 536 300 10;
+#X obj 60 141 midiout;
+#X msg 57 45 240 \, 0 \, 0 \, 16 \, 0 \, 94 \, 2 \, 57 \, 0 \, 1 \,
+3 \, 4 \, 0 \, 0 \, 1 \, 114 \, 247, f 59;
+#X obj 226 174 print;
+#X obj 198 133 list;
+#X obj 276 137 list;
+#X msg 235 105 a;
+#X msg 315 105 b;
+#X text 286 84 bu cikis veri gelince 1 oluyor;
+#X msg 106 101 1;
+#X text 89 68 gonderilecek midi cihaz no;
+#X text 115 120 Once buna tikla;
+#X msg 30 15 240 \, 0 \, 0 \, 16 \, 0 \, 94 \, 2 \, 57 \, 0 \, 1 \,
+0 \, 4 \, 0 \, 0 \, 1 \, 113 \, 247, f 59;
+#X obj 220 77 sysexin;
+#X text 191 196 nedense sadece midiout yaptıginda cevap sysexin'e
+geliyor pedaldan degistirince bisey gelmiyor;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 1;
+#X connect 6 0 4 1;
+#X connect 8 0 0 1;
+#X connect 11 0 0 0;
+#X connect 12 0 3 0;
+#X connect 12 1 4 0;
