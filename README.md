@@ -1,4 +1,5 @@
 # PocketPOD
+(Related PD Patch is PocketPOD.pd, RoboRemo remote control GUI is PocketPODMain.txt)
 Raspberry Pi Guitar Pedal Controller via PD (Pure Data) and MIDI. Supports Line6 Pocket POD and Digitech RP250
 
 I have developed two different Pure Data program to control Line6 Pocket POD and Digitech RP250 multi effects pedal. But it can be applied to any MIDI enabled guitar pedals, effect processors or other instruments like keyboards or synthesizers.
