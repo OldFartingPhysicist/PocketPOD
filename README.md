@@ -18,7 +18,7 @@ Target:
 ![An image from part of PD patch PocketPOD.pd](images/PD_Main_PockedPOD.PNG)
 
 **RoboRemo GUI on Android Phone**
-![RoboRemo GUI on Android Phone](images/RoboRemo_ScrrenShot1.PNG)
+![RoboRemo GUI on Android Phone](images/RoboRemo_ScrrenShot1.png)
 
 Video:
 ------
