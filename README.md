@@ -54,6 +54,8 @@ What help I need to develop:
 2. If presets changed it will be good to write new presets to the device as it works with its own PC program Vyzex.
 I believe both of these functions can be done with MIDI SysEX (Sytem Exclusive) messages.
 
+![PD patch PocketPOD.pd GUI](images/PD_GUI_PocketPOD.PNG)
+
 Digitech RP250 Program Functions:
 ----------------------------------
 
@@ -72,3 +74,5 @@ Program A (RP250_Looper.pd)
 Program B (RP250_Sysex.pd)
 1. It can change presets via with Pure Data using MIDI SysEX messages. I have used very valuable information from Gdigi project (https://desowin.org/gdigi/). Again, thanks to its developer!
 It is only changing between two presets at the moment. I do not know C, therefore instead of examining desowin's gdigi program, I plan to sniff communication to identify other MIDI SysEx messages.
+
+![PD Patch RP250_Sysex.pd](images/RP250_calisan.PNG)
