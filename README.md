@@ -61,7 +61,7 @@ I have developped two program for RP250 and I will combine them together.
 
 Program A
 1. Pure Data running on Raspberry Pi connected to my hardwired interface. (DIY Pedal board interface, 10 buttons and LEDs, 7 onboard + 1 pedal potentioneters).
-2. Still developing Looper function in this part. I have discovered how to make a clickless looper with the help of another project. (Edit add link)
+2. Still developing Looper function in this part. I have discovered how to make a clickless looper with the help of another project. (https://guitarextended.wordpress.com/2013/08/05/making-a-looper-with-pure-data/) Thanks to its developer! It is a great information about how PD records sound and it is also a briliant description why PD made some clickes while overdubbing.
 
 Program B
 1. It can change presets via with Pure Data using MIDI SysEX messages. I have used very valuable information from Gdigi project (https://desowin.org/gdigi/). Again, thanks to its developer!
